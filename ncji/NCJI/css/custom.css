@@ -1,0 +1,106 @@
+a { color: #4B58A6; }
+a:hover { color: #4B58A6; }
+
+#map_canvas img {
+  max-width: none;
+}
+
+#map_canvas{
+	height:400px;
+	width: 100%;
+	}
+
+.filter-box { 
+  height: 8px; 
+  width: 8px;
+  margin-right: 8px;  
+  display: inline-block;
+  *border-right-width: 2px;
+  *border-bottom-width: 2px;
+  border: solid 1px black;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+  -webkit-background-clip: padding-box;
+     -moz-background-clip: padding;
+          background-clip: padding-box; 
+
+}
+
+.filter-green { background-color: #99ff99; }
+.filter-blue { background-color: #9999ff; }
+.filter-purple { background-color: #ff99ff; }
+.filter-white {background-color: #ffffff; }
+.filter-red { background-color: #ff6666; }
+.filter-yellow {background-color: #ffff99; }
+.filter-turquoise {background-color: #a7dbe6; }
+ 
+
+canvas {-ms-touch-action: double-tap-zoom;}
+
+.filter-container{
+		    width: 100%;
+		    float: left;
+		    margin-right: 15px;
+	    }
+	    .filter-list{
+
+		    width: 100%;
+		    overflow-y:scroll;
+		    background-color: #ffffff;
+		    padding-right: 20px;
+		    border: 1px solid #ccc;
+			border-radius: 4px;
+			-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+			box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+			-webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+			-o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+			transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+		    
+	    }
+	    .year-filter{
+		    width:100%;
+		    float: left;
+	    }
+	    .button-container{
+		    width: 100%;
+	    }
+	    
+	    .awarding-agency-div{
+		    font-weight: bold;
+		    margin: 10px 0px;
+		    padding-left: 20px;
+	    }
+	    .awarding-agency-div input{
+
+	    }
+	    .awarding-agency-div span{
+		    margin-left: 6px;
+	    }
+	    .category-name-div{
+		    margin-top: 5px;
+			padding-left: 30px;
+		    font-weight: normal;
+	    }
+	    
+.btn{
+padding: 3px 12px; 
+font-family:"Helvetica Neue",Helvetica,Arial,sans-serif !important;
+text-transform: capitalize;
+}
+.btn-primary:hover{
+background:#255C98 !important; 
+}
+.btn-default:hover{
+background:#F2F2F2 !important;
+}	    
+
+
+
+.ui-slider .ui-slider-handle{
+	width: .7em !important;
+}
+
+.alert {
+	margin-top: 20px;
+}
