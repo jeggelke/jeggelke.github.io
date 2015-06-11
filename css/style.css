@@ -21,8 +21,7 @@ hr {
 }
 
 .title-logo {
-	margin: 20px inherit inherit inherit;
-	width: 100px;
+	margin: 20px inherit inherit inherit;	
 }
 
 .outline-img {
@@ -33,4 +32,10 @@ hr {
 
 .img-backdrop {
 	
+}
+
+@media (max-width:768px) {
+	.name-title { 
+		text-align: center;
+		}
 }
