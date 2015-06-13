@@ -1,15 +1,30 @@
+/** Theme colors
+#d8e4f0		Off White
+#023059		Blue
+#5187b8		Muted Blue
+#a0d9b9		Seafoam Green
+#bf3434		Red
+#f25244		Orange
+#f2da63		Mustard Yellow
+**/
+
 body {
 	font-family: 'Lato', sans-serif;
-	color: #747704;
+	color: #023059;
 	font-weight: 300;
 }
 
 hr {
-	border-top: 5px solid #bcbbbb;
+	border-top: 5px solid #f25244;
+	margin: 0px 0px 10px;
 }
 
 .text-muted {
-	color: #bcbbbb;
+	color: #5187b8;
+}
+
+.header-color {
+	background-color: #f2da63;
 }
 
 .text-thin {
@@ -21,7 +36,7 @@ hr {
 }
 
 .title-logo {
-	margin: 20px inherit inherit inherit;	
+	margin: 10px;	
 }
 
 .outline-img {
