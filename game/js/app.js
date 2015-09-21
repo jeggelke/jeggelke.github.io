@@ -1,3 +1,5 @@
+var selectedCharacter = 'char-boy';
+
 // Enemies our player must avoid
 var Enemy = function(initialX, initialY, speed) {
     // Variables applied to each of our instances go here,
@@ -54,7 +56,7 @@ var initialPlayerX = 200;
 var Player = function() {
 	this.x = initialPlayerX;
 	this.y = initialPlayerY;
-	this.sprite = 'images/char-boy.png';
+	this.sprite = 'images/' + selectedCharacter + '.png';
 }
 
 Player.prototype.update = function() {
