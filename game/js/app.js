@@ -4,10 +4,10 @@ var selectedCharacter = 'char-boy';
 var Enemy = function(initialX, initialY, speed) {
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
-	this.x = initialX;
-	this.y = initialY;
-	this.speed = speed;
-	
+    this.x = initialX;
+    this.y = initialY;
+    this.speed = speed;
+
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
     this.sprite = 'images/enemy-bug.png';
@@ -31,8 +31,8 @@ Enemy.prototype.update = function(dt) {
     var bugHitBoxBottom = this.y + 45;
 
     if (player.x > bugHitBoxLeft && player.x < bugHitBoxRight && player.y > bugHitBoxTop && player.y < bugHitBoxBottom) {
-	    playerScore -= 2;
-   		updateScore(playerScore);
+        playerScore -= 2;
+        updateScore(playerScore);
         player.resetPlayerPosition();
     }
 }
@@ -52,51 +52,51 @@ Enemy.prototype.randomSpeed = function() {
 // This class requires an update(), render() and
 // a handleInput() method.
 var initialPlayerX = 200;
-    initialPlayerY = 300;
+initialPlayerY = 300;
 var Player = function() {
-	this.x = initialPlayerX;
-	this.y = initialPlayerY;
-	this.sprite = 'images/' + selectedCharacter + '.png';
+    this.x = initialPlayerX;
+    this.y = initialPlayerY;
+    this.sprite = 'images/' + selectedCharacter + '.png';
 }
 
 Player.prototype.update = function() {
-	
+
 }
 
 Player.prototype.render = function() {
-	ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 }
 
-Player.prototype.resetPlayerPosition = function() {	
-	this.x = initialPlayerX;
-	this.y = initialPlayerY;
+Player.prototype.resetPlayerPosition = function() {
+    this.x = initialPlayerX;
+    this.y = initialPlayerY;
 }
 
 Player.prototype.handleInput = function(keyPressed) {
-	var playerYMovement = 85;
-	var playerXMovement = 100;
-	if (keyPressed === 'up'){
-		this.y -= playerYMovement;
-		console.log(this.x + ', ' + this.y);
-	}
-	if (this.y < 0){
-		playerScore += 1;
-		updateScore(playerScore);
-		player.resetPlayerPosition();
-	}
-	if (keyPressed === 'down' && this.y < 300){
-		this.y += playerYMovement;
-		console.log(this.x + ', ' + this.y);
-	}
-	if (keyPressed === 'right' && this.x < 400){
-		this.x += playerXMovement;
-		console.log(this.x + ', ' + this.y);
-	}
-	if (keyPressed === 'left' && this.x > 0){
-		this.x -= playerXMovement;
-		console.log(this.x + ', ' + this.y);
-	}	
-		
+    var playerYMovement = 85;
+    var playerXMovement = 100;
+    if (keyPressed === 'up') {
+        this.y -= playerYMovement;
+        console.log(this.x + ', ' + this.y);
+    }
+    if (this.y < 0) {
+        playerScore += 1;
+        updateScore(playerScore);
+        player.resetPlayerPosition();
+    }
+    if (keyPressed === 'down' && this.y < 300) {
+        this.y += playerYMovement;
+        console.log(this.x + ', ' + this.y);
+    }
+    if (keyPressed === 'right' && this.x < 400) {
+        this.x += playerXMovement;
+        console.log(this.x + ', ' + this.y);
+    }
+    if (keyPressed === 'left' && this.x > 0) {
+        this.x -= playerXMovement;
+        console.log(this.x + ', ' + this.y);
+    }
+
 }
 
 // Now instantiate your objects.
@@ -105,9 +105,9 @@ Player.prototype.handleInput = function(keyPressed) {
 var allEnemies = [];
 
 // Instantiate Enemies
-for (var i = 0; i < 3; i++){
-	var tempSpeed = Math.floor(Math.random() * 5 + 1) * 80;
-	allEnemies.push(new Enemy(60, 60 + 85 * (i % 3), tempSpeed));
+for (var i = 0; i < 3; i++) {
+    var tempSpeed = Math.floor(Math.random() * 5 + 1) * 80;
+    allEnemies.push(new Enemy(60, 60 + 85 * (i % 3), tempSpeed));
 }
 
 var player = new Player();
@@ -128,6 +128,6 @@ document.addEventListener('keyup', function(e) {
 var playerScore = 0;
 
 var updateScore = function(newScore) {
-	var currentScore = document.getElementById('score');
-	currentScore.innerHTML = newScore;
+    var currentScore = document.getElementById('score');
+    currentScore.innerHTML = newScore;
 }
