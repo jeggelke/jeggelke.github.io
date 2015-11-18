@@ -12,6 +12,7 @@ body {
 	font-family: 'Lato', sans-serif;
 	color: #023059;
 	font-weight: 300;
+	font-size: 20px;
 }
 
 hr {
@@ -36,21 +37,21 @@ hr {
 }
 
 .title-logo {
-	margin: 10px auto;	
+	margin: 10px auto;
 }
 
 .outline-img {
 	padding: 10px;
 	background-color: rgba(0,0,0,0.5);
-	border-radius: 6px; 
+	border-radius: 6px;
 }
 
 .img-backdrop {
-	
+
 }
 
 @media (max-width:768px) {
-	.name-title { 
+	.name-title {
 		text-align: center;
 		}
 }

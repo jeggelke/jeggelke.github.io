@@ -55,7 +55,7 @@ a:hover {
 	flex-wrap: wrap;
 }
 .top-row{
-	border-bottom: solid 5px #BCBBBB; 
+	border-bottom: solid 5px #BCBBBB;
 }
 .col-1{
 	width: 8.33%;
@@ -117,16 +117,16 @@ a:hover {
 	text-align: right;
 }
 
-.name {	
+.name {
 	font-size: 56px;
 	padding: 0 8px 0 0;
-	margin: 0 auto;	
+	margin: 0 auto;
 }
 
-.title {	
+.title {
 	font-size: 20px;
 	padding: 0 8px 0 0;
-	margin: 0 auto;	
+	margin: 0 auto;
 }
 
 /* body */
@@ -151,5 +151,5 @@ a:hover {
 }
 
 .body-url{
-	text-align: center; 
+	text-align: center;
 }
