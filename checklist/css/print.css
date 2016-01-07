@@ -1,0 +1,77 @@
+@media print {
+
+body {
+    -webkit-print-color-adjust: exact !important;
+    }
+
+#bottomtxt, #printtopdftxt, header, #printorpdf {
+   display: none !important;
+}
+
+#p1, #p2, #p3, #total {
+    page-break-after: always !important;
+}
+
+table {
+    border: 1px solid black !important;
+}
+    
+tr {
+    border: 1px solid black !important;
+}
+    
+#rowstyleprinciple td {
+    background-color: #F4F4F4 !important;
+}
+
+#rowstyle0 {
+    background-color: #F7FAF0 !important;
+}
+
+#rowstyle1 {
+    background-color: #FDEEE4 !important;
+}
+
+#rowstyle2 {
+    background-color: #E8F5F8 !important;
+}
+
+#rowstyle3 {
+    background-color: #F2F2F2 !important;
+}
+
+
+#rowstylesection td {
+    background-color: #ccc !important;
+}
+
+#rowstyleimprove td {
+    background-color: #ccc !important;
+}
+
+.question-responses {
+	display: block !important;
+}
+
+.answer-div {
+	width: 180px !important;
+}
+
+.question-div{
+	width: 800px !important;
+}
+
+.question-responses {
+	page-break-after: always;
+}
+
+.question-responses:last-child {
+	page-break-after: avoid;
+}
+.question-container:nth-child(19n){
+	page-break-after: always !important;
+}    
+.question-container:nth-child(19n + 1){
+	margin-top: 10mm;
+}  
+}
