@@ -26,7 +26,7 @@
     </div>
 	<div class="row">
 	    <div class="col-md-12">
-	      <p>Here are a few things I've been working on! View my full resume <a href="resume">here</a>.</p>
+	      <p>Here are a few things I've been working on! View my full resume <a href="http://jeggelke.github.io/resume">here</a>.</p>
 	    </div>
 	</div>
     <div class="row">
@@ -34,18 +34,24 @@
     </div>
     <div class="row text-center">
       <div class="col-md-4 col-sm-6 col-xs-12">
-        <img class="img-responsive modal-img outline-img" src="images/ncjiMap.png" alt="ncji map image" data-toggle="modal" data-target="#project1">
         <h3>Filterable Google Map</h3>
-        <p><a href="ncji/index.html">Link to project</a></p>
+        <img class="img-responsive modal-img outline-img" src="images/ncjiMap.png" alt="ncji map image" data-toggle="modal" data-target="#project1">
+        <p><a href="ncji/index.html" target="_blank">Link to project</a></p>
       </div>
       <div class="col-md-4 col-sm-6 col-xs-12">
-        <img class="img-responsive modal-img outline-img" src="images/jj-checklist-resized.png" alt="sunflower image" data-toggle="modal" data-target="#project2">
         <h3>JJ Interactive Checklist</h3>
+        <img class="img-responsive modal-img outline-img" src="images/jj-checklist-resized.png" alt="sunflower image" data-toggle="modal" data-target="#project2">
+        <p><a href="checklist/index.html" target="_blank">Link to project</a></p>
       </div>
       <div class="col-md-4 col-sm-6 col-xs-12">
-        <img class="img-responsive modal-img outline-img" src="images/neighborhoodMap-resized.png" alt="bokeh image" data-toggle="modal" data-target="#project3">
         <h3>Neighborhood Map</h3>
-        <p><a href="http://github.com">Link to project</a></p>
+        <img class="img-responsive modal-img outline-img" src="images/neighborhoodMap-resized.png" alt="bokeh image" data-toggle="modal" data-target="#project3">
+        <p><a href="/neighborhood-map" target="_blank">Link to project</a></p>
+      </div>
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <h3>Stepping Up Initiative</h3>
+        <img class="img-responsive modal-img outline-img" src="images/steppingUp.png" alt="bokeh image" data-toggle="modal" data-target="#project4">
+        <p><a href="https://stepuptogether.org" target="_blank">Link to website</a></p>
       </div>
     </div>
   </div>
@@ -55,7 +61,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title" id="myModalLabel"><a href="ncji/index.html">National Crime Justice Initiatives Map</a></h4>
+        <h4 class="modal-title" id="myModalLabel"><a href="ncji/index.html" target="_blank">National Crime Justice Initiatives Map</a></h4>
       </div>
       <div class="modal-body">
 	  	<img class="img-responsive outline-img" src="images/ncjiMap.png">
@@ -73,7 +79,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title" id="myModalLabel">Juvenile Justice Interactive Checklist</h4>
+        <h4 class="modal-title" id="myModalLabel"><a href="checklist/index.html" target="_blank">Juvenile Justice Interactive Checklist</a></h4>
       </div>
       <div class="modal-body">
         <img class="img-responsive outline-img" src="images/jj-checklist-resized.png">
@@ -91,11 +97,29 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title" id="myModalLabel"><a href="neighborhood-map">Neighborhood Map (Work in Progress)</a></h4>
+        <h4 class="modal-title" id="myModalLabel"><a href="neighborhood-map" target="_blank">Neighborhood Map (Work in Progress)</a></h4>
       </div>
       <div class="modal-body">
         <img class="img-responsive outline-img" src="images/neighborhoodMap-resized.png">
         This application shows my favorite places to hang out in my neighborhood. Utilizes knockout.js, Google Maps JavaScript API, JQuery, and Bootstrap. I plan on adding other features such as Yelp reviews and a Google Street View of each location.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 4 -->
+<div class="modal fade" id="project4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel"><a href="https://stepuptogether.org" target="_blank">Stepping Up Initiative</a></h4>
+      </div>
+      <div class="modal-body">
+        <img class="img-responsive outline-img" src="images/steppingUp.png">
+        This call to action microsite is the home of a national initiative led by The Council of State Governments Justice Center, the National Association of Counties, and the American Psychiatric Association Foundation. The purpose of this initiative is to reduce the number of people with mental illness in jails and prisons. This site was built with Wordpress, uses JQuery and Bootstrap, and is fully responsive across browsers and devices.
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
