@@ -50,6 +50,10 @@ hr {
 
 }
 
+.fa {
+	font-size: 30px;
+}
+
 .modal-img:hover {
 	cursor: pointer;
 }
@@ -58,4 +62,8 @@ hr {
 	.name-title {
 		text-align: center;
 		}
+}
+
+a {
+	font-weight: 600;
 }
