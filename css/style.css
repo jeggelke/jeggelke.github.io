@@ -50,6 +50,10 @@ hr {
 
 }
 
+.modal-img:hover {
+	cursor: pointer;
+}
+
 @media (max-width:768px) {
 	.name-title {
 		text-align: center;
