@@ -1,6 +1,19 @@
-<link rel="stylesheet" href="css/bootstrap.min.css"/>
+<html>
+<head>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
     <link rel="stylesheet" href="css/custom.css"/>
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.min.css"/>  
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.min.css"/>
+    <script async="" src="//www.google-analytics.com/analytics.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-72167837-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+</head>
+<body>
     <div class='container-fluid'>
       <div class='row'>
         <div class='col-md-12'>
@@ -11,29 +24,29 @@
             </div>
           </noscript>
           <div id='map_canvas'></div>
-        </div>        
+        </div>
       </div>
       <div class="row">
 	  	<div class='alert alert-info col-sm-12' id='result_box'><strong id='result_count'></strong></div>
       </div>
-      <div class="row">        
+      <div class="row">
         <div>
           <div class='well'>
-			<div class="filters">			
+			<div class="filters">
 				<h2>Filter By:</h2>
 				<div class="row">
 				<div class="col-sm-8">
-				<div class="filter-container agency">	
+				<div class="filter-container agency">
 				<h4>
 				  Awarding Agency
 				</h4>
 				<p>
-				<div class='inputs-list filter-list' id='awarding-agency-filter-ul'></div> 	
+				<div class='inputs-list filter-list' id='awarding-agency-filter-ul'></div>
 				</p>
 				</div>
 				</div>
 				<div class="col-sm-4">
-				
+
 				<div class="year-filter">
 				<h4>
 				  Award Year
@@ -57,7 +70,7 @@
 				      Yes
 					</label>
 				  </li>
-				</ul> 	
+				</ul>
 				</p>
 				</div>
 				<div class="location-filter">
@@ -74,8 +87,8 @@
 				                  <option value='805'>1/2 mile</option>
 				                  <option value='1610'>1 mile</option>
 				                  <option value='3220'>2 miles</option>
-				                  <option value='8050'>5 miles</option>                  
-				                  <option value='16100'>10 miles</option>                  
+				                  <option value='8050'>5 miles</option>
+				                  <option value='16100'>10 miles</option>
 				                </select>
 				              </label>
 				            </p>
@@ -91,14 +104,14 @@
 				</div>
 				</div>
 				          </div>
-          		          
-            
+
+
           </div>
 
         </div>
       </div>
     </div>
-	
+</body>
     <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/jquery.address.js"></script>
@@ -110,14 +123,14 @@
 /*        $(window).resize(function () {
           var h = $(window).height(),
             offsetTop = 105; // Calculate the top offset
-        
+
           $('#map_canvas').css('height', (h - offsetTop));
         }).resize();
-*/       
+*/
 
         $(function() {
           MapsLib.initialize();
-     
+
 
 //	MapsLib.doSearch();
 
@@ -136,7 +149,7 @@
 	          tempClassCheck = tempClassCheck.replace(/category-name-checkbox/g, '').replace(/\s/g, '');
 	          tempClassCheck = $('.' + tempClassCheck + ':checked').length;
 //	          var temp1 = $(tempClassCheck + ':checked').length;
-//	          var temp2 = $(tempClassCheck).length; 
+//	          var temp2 = $(tempClassCheck).length;
 
 			if (tempClassCheck == 0) {
 				var tempParentCheckbox = $(this).parent().parent().children('input.agency-name-checkbox');
@@ -148,35 +161,35 @@
 	          });
          $('#awarding-agency-filter-ul').on('click', ':checkbox', function(){
             MapsLib.doSearch();
-          });  
-       
-    
+          });
+
+
           $(':radio').click(function(){
             MapsLib.doSearch();
           });
-          
+
           $('#search_radius').change(function(){
             MapsLib.doSearch();
           });
-          
+
           $('#search').click(function(){
             MapsLib.doSearch();
           });
-          
+
           $('#find_me').click(function(){
-            MapsLib.findMe(); 
+            MapsLib.findMe();
             return false;
           });
-          
+
           $('#reset').click(function(){
             $.address.parameter('address','');
             $(':checkbox').prop('checked', false);
             $('div.category-name-div').attr('style','display:none');
             $('.agency-name-checkbox').attr('value', 1);
-            MapsLib.doSearch(); 
+            MapsLib.doSearch();
             return false;
           });
-          
+
           $(":text").keydown(function(e){
               var key =  e.keyCode ? e.keyCode : e.which;
               if(key == 13) {
@@ -188,3 +201,4 @@
 
 
     </script>
+</html>
