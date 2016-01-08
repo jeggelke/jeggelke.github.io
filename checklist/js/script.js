@@ -1,20 +1,23 @@
 // Using JQuery selectors to add onFocus and onBlur event handlers
 
-$(document).ready( function() {
+var disclaimerRun = false;
 
-  // Add the "focus" value to class attribute 
+
+$(document).ready( function() {
+var runPage = function() {
+  // Add the "focus" value to class attribute
   $('ul.radio li').focusin( function() {
     $(this).addClass('focus');
   }
   );
 
-  // Remove the "focus" value to class attribute 
+  // Remove the "focus" value to class attribute
   $('ul.radio li').focusout( function() {
     $(this).removeClass('focus');
   });
 
 $('.demo-next-button').click(function(){
-	if (validateEmail() == false){
+	if (validateEmail() === false){
 		alert('Please provide a valid email address.');
 		$('input[type="email"]').addClass('red-color');
 	}
@@ -54,7 +57,7 @@ $('.sections').on('click', '.nav-button', function(){
 	checkIfDone(thisID, moveToNextSection);
 	updateProgressBar();
 //	$('html, body').animate({ scrollTop: 0 }, 'fast');
-	
+
 //	window.history.replaceState(null, null, "#" + nextSection);
 });
 
@@ -79,8 +82,8 @@ var moveToNextSection = function(id){
 	$(nextSectionContainer).removeClass('hidden');
 	$(thisSectionContainer).addClass('hidden');
 	$(navItem).parent().next().children().removeClass('disabled');
-	addCheckmark(navItem);	
-}	
+	addCheckmark(navItem);
+}
 
 var checkIfDone = function(id, func){
 
@@ -111,7 +114,7 @@ var checkIfDone = function(id, func){
 			$('html, body').animate({ scrollTop: 0 }, 'fast');
 		} else {
 				alert('All questions must be completed in order to save and advance the form.');
-				$('html, body').animate({ scrollTop: $('.red-color').parent().offset().top }, 'fast');				
+				$('html, body').animate({ scrollTop: $('.red-color').parent().offset().top }, 'fast');
 			}
 		}
 
@@ -129,7 +132,7 @@ var moveToNextPrinciple = function(thisId){
 }
 
 $('#sidebar').on('click', '.prin-nav', function(event){
-	event.preventDefault();	
+	event.preventDefault();
 })
 
 $('#sidebar').on('click', '.nav-section.clickable', function(event){
@@ -144,7 +147,7 @@ $('#sidebar').on('click', '.nav-section.clickable', function(event){
 		divToGo = thisHref + '-container';
 	};
 	var principleDiv = $(this).parent().parent().prev('.prin-nav').attr('href');
-	$('.group, .subgroup').addClass('hidden');		
+	$('.group, .subgroup').addClass('hidden');
 	$(divToGo).removeClass('hidden');
 	$(principleDiv).removeClass('hidden');
 	})
@@ -165,6 +168,26 @@ if (localStorage.getItem('p1q1')){
 	setTimeout(function(){loadDemo();loadRadioFields();updateProgressBar();overlay();}, 2000);
 } else if (localStorage.getItem('firstname')) {loadDemo();}
 
+}
+
+var disclaimerOverlay = function() {
+  el = document.getElementById("overlay-1");
+  el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
+  closeDisclaimer();
+
+};
+
+var closeDisclaimer = function() {
+  $("#close-disclaimer").click(function(){
+    $("#overlay-1").hide();
+    runPage();
+  });
+};
+
+if (disclaimerRun === false){
+  disclaimerOverlay();
+  disclaimerRun = true;
+}
 
 });
 
@@ -181,29 +204,29 @@ var loadRadioFields = function(){
 		var navSidebarSection = '#' + $(targetId).parent().parent().parent().parent().children('.nav-button, .submit-button').data('nav-entry');
 		addCheckmark(navSidebarSection);
 		$(navSidebarSection).removeClass('disabled');
-		$(navSidebarSection).parent().parent().parent().children('.prin-nav').removeClass('disabled');		
+		$(navSidebarSection).parent().parent().parent().children('.prin-nav').removeClass('disabled');
 		$(navSidebarSection).parent().next().children().removeClass('disabled');
 		$(navSidebarSection).parent().next().children().addClass('clickable');
 		if ($(navSidebarSection).parent().is('li:last-child')) {
 			$(navSidebarSection).parent().parent().parent().next().children('.prin-nav').removeClass('disabled');
 			$(navSidebarSection).parent().parent().parent().next().children('ul').children('li:first-child').children('.nav-link').removeClass('disabled');
 			$(navSidebarSection).parent().parent().parent().next().children('ul').children('li:first-child').children('.nav-link').addClass('clickable');
-			
+
 		}
-		}		
-});	
+		}
+});
 principleCheckmarks();
 }
 
-/** JSON file **/ 
+/** JSON file **/
 // ID of the Google Spreadsheet
- var spreadsheetID = "16g6H2Wy9W6iU76DD697leFy5FzAG5SRX7M2rksOwOF0";
- 
- // Make sure it is public or set to Anyone with link can view 
+var spreadsheetID = "18ukrdJgxZS9QjRfM_aaNCb4gqqtlIcyhPejlcZtkgrQ";
+
+ // Make sure it is public or set to Anyone with link can view
  var url = "https://spreadsheets.google.com/feeds/list/" + spreadsheetID + "/od6/public/values?alt=json";
- 
+
  $.getJSON(url, function(data) {
- 
+
   var entry = data.feed.entry;
   var principleSection = [];
   $(entry).each(function(){
@@ -226,9 +249,9 @@ principleCheckmarks();
 	}
 	addNavButtons(distinct);
 
- 
+
  });
- 
+
  var createQuestions = function(principleNum, sectionNum, questionNum, questionText) {
 	var questionInput = document.createElement('fieldset');
 	questionInput.class = 'radiogroup';
@@ -243,16 +266,16 @@ principleCheckmarks();
 	questionListCreation('4', 'Most of the Time', questionInput, principleNum, questionNum, sectionNum, questionList);
 	questionListCreation('2', 'Some of the Time', questionInput, principleNum, questionNum, sectionNum, questionList);
 	questionListCreation('0', 'Never', questionInput, principleNum, questionNum, sectionNum, questionList);
-	questionListCreation('na', 'Not Applicable', questionInput, principleNum, questionNum, sectionNum, questionList);							
+	questionListCreation('na', 'Not Applicable', questionInput, principleNum, questionNum, sectionNum, questionList);
 	$('#p' + principleNum + '-section-' + sectionNum).append(questionInput);
- } 
- 
+ }
+
 var questionListCreation = function(choice, inputLabel, questionInput, principleNum, questionNum, sectionNum, questionList) {
 	var selectionLi = document.createElement('li');
 	var selectionInput = document.createElement('input');
 	var questionID = choice + 'p' + principleNum + 'q' + questionNum;
 	$(selectionInput).attr({
-		type: 'radio', 
+		type: 'radio',
 		value: choice,
 		id: questionID,
 		'data-section': 'p' + principleNum + 's' + sectionNum,
@@ -277,16 +300,16 @@ $('body').scrollspy({
     target: '.bs-docs-sidebar',
     offset: 500
 });
-});//]]> 
+});//]]>
 
 
-var addNavButtons = function(sectionID){	
+var addNavButtons = function(sectionID){
 	for (i = 0; i < sectionID.length - 1; i++){
 		var nextButton = document.createElement('div');
 		$(nextButton).addClass('nav-button btn btn-primary btn-lg btn-block');
 		$(nextButton).html('Save and Go to Next Section');
 		var sectionNum = i + 1;
-		var thisSectionID = sectionID[i].principleNum + sectionID[i].sectionNum;		
+		var thisSectionID = sectionID[i].principleNum + sectionID[i].sectionNum;
 		var nextSectionID = sectionID[i+1].principleNum + sectionID[i+1].sectionNum;
 		$(nextButton).attr('id', 'next-' + thisSectionID);
 //		var nextPrincipleID = if (sectionID.[i]=){}sectionNum + 1;
@@ -297,11 +320,11 @@ var addNavButtons = function(sectionID){
 		var saveText = document.createElement('p');
 		$(saveText).html('<b>Return to this page to resume your progress.</b>');
 		$(saveText).addClass('text-center');
-		$('#' + thisSectionID).append(saveText);		
+		$('#' + thisSectionID).append(saveText);
 	}
 		var thisSectionID = sectionID[i].principleNum + sectionID[i].sectionNum;
 		var submitButton = document.createElement('input');
-		$(submitButton).addClass('submit-button btn btn-danger btn-lg btn-block');		
+		$(submitButton).addClass('submit-button btn btn-danger btn-lg btn-block');
 		$(submitButton).attr('id', 'submit-button');
 		$(submitButton).attr('type', 'submit');
 		$(submitButton).attr('value', 'Save and Submit for Scoring');
@@ -362,10 +385,10 @@ var clearLocalFormData = function() {
 //Load confirmation questions
 var loadConfirmationQuestions = function() {
 	 $.getJSON(url, function(data) {
- 
+
   var entry = data.feed.entry;
   for (i = 1; i < 5; i++){
-	  var previousAnswers = document.createElement('div');	  
+	  var previousAnswers = document.createElement('div');
 	  $(previousAnswers).attr('id', 'p' + i + '-questions-container');
 	  $(previousAnswers).addClass('question-responses');
 	  $(previousAnswers).html('<p><strong>Principle ' + i + '</strong></p>');
@@ -377,10 +400,10 @@ var loadConfirmationQuestions = function() {
     var sectionNum = this.gsx$sectionnum.$t;
     var questionNum = this.gsx$questionnum.$t;
     var questionText = this.gsx$questiontext.$t;
-    
+
     //add question text
     var questionContainer = document.createElement('div');
-    $(questionContainer).attr('id', 'p' + principleNum + 'q' + questionNum + '-response') 
+    $(questionContainer).attr('id', 'p' + principleNum + 'q' + questionNum + '-response')
     $(questionContainer).addClass('question-container row');
     var qaContainer = document.createElement('div');
     $(qaContainer).addClass('col-sm-10 col-md-10 col-lg-10 qa-container vertical-align');
@@ -395,7 +418,7 @@ var loadConfirmationQuestions = function() {
     $(question).html(questionText);
     $(questionTextDiv).append(questionNumDiv);
     $(questionTextDiv).append(question);
-    
+
     //add question answer
     var answerTextDiv = document.createElement('div');
     $(answerTextDiv).addClass('col-sm-3 col-md-3 col-lg-3 text-center answer-div');
@@ -413,9 +436,9 @@ var loadConfirmationQuestions = function() {
     } else if (answerNum = 'na') {
 	    answerText = 'Not Applicable';
     }
-    $(answer).html(answerText);    
+    $(answer).html(answerText);
     $(answerTextDiv).append(answer);
-    
+
     //append it all together
     $(questionContainer).append('<div class="col-sm-1 col-md-1 col-lg-1 white-bg"></div>');
     $(qaContainer).append(questionTextDiv);
@@ -425,8 +448,8 @@ var loadConfirmationQuestions = function() {
     $('#p' + principleNum + '-questions-container').append(questionContainer);
   });
     var totalSections = entry[entry.length - 1].gsx$sectionnum.$t;
-    
- 
+
+
  });
 }
 
@@ -453,13 +476,13 @@ var updateProgressBar =  function(){
 	$('.progress-bar').css('width', roundedPercentage + '%');
 	$('#number-of-completed-sections').html(completedSections);
 	$('#total-number-of-sections').html(totalSections);
-	
+
 }
 
 //Loading...
 
 var overlay = function() {
-	if ($('#overlay').length){
-	el = document.getElementById("overlay");
+	if ($('#overlay-2').length){
+	el = document.getElementById("overlay-2");
 	el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
 }}
