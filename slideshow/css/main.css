@@ -1,1 +1,57 @@
-body {}
+.module-container {
+  width: 100%;
+}
+
+.ss-container {
+  width: 100%;
+
+}
+
+.ss-container img {
+  width: 100%;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.ss-entry {
+  position: relative;
+}
+
+/** Text **/
+
+.text-on-ss {
+  background-color: rgba(0, 0, 0, 0.50);
+  color: #fff;
+  padding: 10px;
+}
+
+.ss-nav {
+  width: 60px;
+  position: absolute;
+  top:50%;
+  text-align: center;
+}
+
+.ss-prev {
+  left: 0px;
+}
+
+.ss-next {
+  right: 0px;
+}
+
+.ss-caption {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  padding: 10px 0px;
+
+}
+
+/** DELETE RULES WHEN COMPLETED **/
+
+.makeshift-column {
+  width: 634px;
+  position: relative;
+}
